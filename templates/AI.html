@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Chat Interface with Sidebar</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <i  class='bx bx-menu ' id="menu-icon"></i>
+        <a href="#home" class="logo">Gesture<span>Sync</span></a>
+        <nav class="navbar ">
+        <a href="index.html" >Home</a>
+        <a href="services.html">Services</a>
+        <a href="Education.html">Education</a>
+        <a href="AI.html"  class="active">AI-Help</a>
+     
+        </nav>
+    </header>
+  <div class="container">
+    <div class="sidebar">
+      <div class="icon-container">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="none" stroke="#00ffee" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 20v-6M6 12l6-6 6 6" />
+        </svg>
+      </div>
+      <div class="icon-container">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="none" stroke="#00ffee" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10" />
+          <path d="M2 12h20M12 2v20" />
+        </svg>
+      </div>
+      <div class="icon-container">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="none" stroke="#00ffee" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2a10 10 0 0 0 0 20v-2M2 12h2M22 12h-2M12 2v2" />
+        </svg>
+      </div>
+    </div>
+
+    <div class="chat-container">
+      <div class="chat-header">
+        <h2>AI-Help</h2>
+      </div>
+
+      <div class="chat-box" id="chat-box">
+        <div class="message user">
+          <p>Hi there!</p>
+        </div>
+        <div class="message bot">
+          <p>Hello! How can I assist you today?</p>
+        </div>
+      </div>
+
+      <div class="input-box">
+        <input type="text" placeholder="Type a message..." id="chat-input">
+        <button type="button" onclick="sendMessage()">Send</button>
+      </div>
+    </div>
+  </div>
+  <footer style="background-color: #2C3E50; color: white; padding: 20px; text-align: center;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+        <p>&copy; 2024 GestureSync. <br> <br>All Rights Reserved.  </p>
+        <br>
+        <nav>
+            <a href="#about" style="color: white; margin: 0 15px; text-decoration: none;">About Us</a>
+            <a href="#services" style="color: white; margin: 0 15px; text-decoration: none;">Services</a>
+            <a href="#contact" style="color: white; margin: 0 15px; text-decoration: none;">Contact</a>
+            <a href="#privacy" style="color: white; margin: 0 15px; text-decoration: none;">Privacy Policy</a>
+        </nav>
+     
+    </div>
+</footer>
+  <script>
+    function sendMessage() {
+      const chatBox = document.getElementById('chat-box');
+      const input = document.getElementById('chat-input');
+      const message = input.value;
+      if (message) {
+        const userMessage = document.createElement('div');
+        userMessage.classList.add('message', 'user');
+        userMessage.innerHTML = `<p>${message}</p>`;
+        chatBox.appendChild(userMessage);
+        input.value = '';
+
+        // Scroll to bottom of chat after sending message
+        chatBox.scrollTop = chatBox.scrollHeight;
+      }
+    }
+  </script>
+</body>
+</html>

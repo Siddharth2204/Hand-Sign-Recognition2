@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GestureSync</title>
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- PyScript Integration -->
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.8.2/pyscript.css">
+    <script type="module" src="https://pyscript.net/releases/2024.8.2/pyscript.js"></script>
+</head>
+
+<body>
+    <!-- PyScript Execution -->
+    <py-script>
+        print("Hello world from PyScript!")
+    </py-script>
+
+    <!-- Header Section -->
+    <header class="header">
+        <i class='bx bx-menu' id="menu-icon"></i>
+        <a href="#home" class="logo">Gesture<span>Sync</span></a>
+        <nav class="navbar" id="navbar">
+            <a href="{{ url_for('home') }}" class="active">Home</a>
+            <a href="{{ url_for('services') }}">Services</a>
+            <a href="index2">Education</a>
+            <a href="index3">AI-Help</a>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section class="home" id="home">
+        <div class="home-content">
+            <h1>Hi, <span>SIDDHARTH</span></h1>
+            <h3 class="text-animation">Convert<span></span></h3>
+            <p>
+                The Gesture<span>Sync</span> app bridges communication between the deaf and hearing communities.
+                It detects sign language gestures and converts them into real-time text or audio, enabling seamless interaction.
+                This innovative tool fosters inclusivity, enhancing accessibility and communication for both deaf and hearing individuals in everyday situations.
+            </p>
+            <div class="social-icon">
+                <a href="#"><i class='bx bxl-linkedin'></i></a>
+                <a href="#"><i class='bx bxl-github'></i></a>
+                <a href="#"><i class='bx bxl-twitter'></i></a>
+                <a href="#"><i class='bx bxl-instagram-alt'></i></a>
+            </div>
+            <div class="btn-group">
+                <a href="#" class="btn">Sign-up</a>
+                <a href="#contact" class="btn m">Login</a>
+            </div>
+        </div>
+        <div class="home-img">
+            <!-- Corrected image path for static folder -->
+            <img src="{{ url_for('static', filename='images/img.jpeg') }}" alt="Home Image">
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer style="background-color: #2C3E50; color: white; padding: 20px; text-align: center;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <p>&copy; 2024 GestureSync. <br><br>All Rights Reserved.</p>
+            <nav>
+                <a href="#about" style="color: white; margin: 0 15px; text-decoration: none;">About Us</a>
+                <a href="#services" style="color: white; margin: 0 15px; text-decoration: none;">Services</a>
+                <a href="#contact" style="color: white; margin: 0 15px; text-decoration: none;">Contact</a>
+                <a href="#privacy" style="color: white; margin: 0 15px; text-decoration: none;">Privacy Policy</a>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- External JavaScript -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
